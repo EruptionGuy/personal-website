@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Work - Vũ Lê Trung Hiếu</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- Distinctive Fixed Navbar with Frosted Blur -->
+    <nav class="navbar">
+        <span class="nav-brand">Vũ Lê Trung Hiếu</span>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="work.html" class="active">My Work</a>
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="center-container work-page-container">
+        <!-- Header Section -->
+        <header class="work-header">
+            <h1>My Work</h1>
+            <p class="work-subtitle">Projects I've developed, communities I've contributed to, and initiatives I've led</p>
+        </header>
+
+        <!-- Color-Coded Category Filter Pills -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Software">Software</button>
+            <button class="filter-btn" data-filter="Games">Games</button>
+            <button class="filter-btn" data-filter="Leadership & Activities">Leadership & Activities</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid" id="projectGrid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+    <script src="work.js"></script>
+</body>
+</html>
