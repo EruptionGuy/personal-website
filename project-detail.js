@@ -38,19 +38,30 @@ if (!project) {
             galleryHTML = `<div class="masonry-gallery" id="gallery-${index}"></div>`;
         }
 
+        // Support both a single 'embedUrl' string OR an 'embedUrls' array
         let embedHTML = "";
-        if (sec.embedUrl) {
-            embedHTML = `
+        const urlsToEmbed = [];
+        
+        if (sec.embedUrls && Array.isArray(sec.embedUrls)) {
+            urlsToEmbed.push(...sec.embedUrls);
+        } else if (sec.embedUrl) {
+            urlsToEmbed.push(sec.embedUrl);
+        }
+
+        if (urlsToEmbed.length > 0) {
+            const frames = urlsToEmbed.map(url => `
                 <div class="video-embed-container">
-                    <iframe src="${sec.embedUrl}" title="${sec.heading}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="${url}" title="${sec.heading}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            `;
+            `).join("");
+
+            embedHTML = `<div class="video-embed-grid">${frames}</div>`;
         }
 
         sectionsHTML += `
             <section class="project-section">
                 <h2>${sec.heading}</h2>
-                <p>${sec.text}</p>
+                ${sec.text ? `<p>${sec.text}</p>` : ""}
                 ${embedHTML}
                 ${galleryHTML}
             </section>
@@ -95,7 +106,7 @@ if (!project) {
 function loadNumberedImagesIntoGallery(folderPath, totalImages, galleryElement) {
     if (!galleryElement || !totalImages) return;
 
-    const extensions = ["jpg", "JPG", "png", "PNG", "webp", "WEBP", "jpeg", "JPEG"];
+    const extensions = ["jpg", "png", "webp"];
 
     for (let i = 1; i <= totalImages; i++) {
         extensions.forEach(ext => {

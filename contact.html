@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact - Vũ Lê Trung Hiếu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">Vũ Lê Trung Hiếu</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="work.html" class="active">My Work</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            
+            <!-- Header -->
+            <div class="contact-header">
+                <span class="contact-subtitle">Get In Touch</span>
+                <h1 class="contact-title">Let's Build Something Together</h1>
+                <p class="contact-description">
+                    Whether you have a question, a project idea, or just want to connect, feel free to drop a message below.
+                </p>
+            </div>
+    
+            <div class="contact-content-grid">
+                
+                <!-- Direct Reach Out & Social Badges -->
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>Reach out directly via email or find me on social platforms.</p>
+    
+                    <div class="contact-methods">
+                        <a href="mailto:trunghieu15102009@gmail.com" class="contact-method-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">trunghieu15102009@gmail.com</span>
+                            </div>
+                        </a>
+    
+                        <a href="https://github.com/eruptionguy" target="_blank" class="contact-method-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <span class="method-label">GitHub</span>
+                                <span class="method-value">github.com/eruptionguy</span>
+                            </div>
+                        </a>
+    
+                        <a href="https://www.facebook.com/trunghieu.vule.73#" target="_blank" class="contact-method-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <span class="method-label">Facebook</span>
+                                <span class="method-value">facebook.com/trunghieu.vule.73#</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Non-Functional Glass Form -->
+                <div class="contact-form-card">
+                    <form onsubmit="event.preventDefault();" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" autocomplete="off">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" autocomplete="off">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Project Inquiry / Hello" autocomplete="off">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+                        </div>
+    
+                        <button type="submit" class="contact-submit-btn">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
